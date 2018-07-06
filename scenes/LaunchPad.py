@@ -24,5 +24,5 @@ class LaunchPad(object):
     def clickMCQ(self):
         self.altdriver.wait_for_current_scene_to_be('LaunchPad')
         self.altdriver.wait_for_element('MCQ').tap()
-        self.altdriver.wait_for_current_scene_to_be('MCQ')
+        #self.altdriver.wait_for_current_scene_to_be('MCQ')
     

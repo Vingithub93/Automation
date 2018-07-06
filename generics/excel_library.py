@@ -1,7 +1,5 @@
 '''
-Created on 03-Jul-2018
-
-@author: Automation
+This module is used to read and write to excel
 '''
 
 import xlrd

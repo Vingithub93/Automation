@@ -1,13 +1,7 @@
 '''
-Created on 03-Jul-2018
-
-@author: Automation
+This module contains generic methods
 '''
-
-
-
 from time import sleep
-
 
 class Generics(object):
     
@@ -19,6 +13,9 @@ class Generics(object):
         start_y=dSize['height']*start_yvalue
         end_y=dSize['height']*end_yvalue
         driver.swipe(start_x, start_y, end_x, end_y)
+        
+    def wait_for_game_load(self):
+        sleep(4)
         
     def think_time(self):
         sleep(2)

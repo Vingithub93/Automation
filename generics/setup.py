@@ -6,7 +6,8 @@ Created on 03-Jul-2018
 
 import os
 import xlrd
-from generics import Auto_Const
+
+from generics import auto_const
 
 
 def main():
@@ -14,7 +15,7 @@ def main():
     check=None
     status=None
         
-    book=xlrd.open_workbook(Auto_Const.CONTROLLER_PATH)
+    book=xlrd.open_workbook(auto_const.CONTROLLER_PATH)
     sheet=book.sheet_by_name('test_case_controller')
         
     value=sheet.cell_value(1,1)
@@ -43,6 +44,6 @@ def main():
         f.close()
         print 'file create complete 2'
             
-    os.chdir(Auto_Const.PATH('../'))
+    os.chdir(auto_const.PATH('../'))
     os.startfile("test_run.bat")
     print 'file execution started'

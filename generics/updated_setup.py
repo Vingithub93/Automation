@@ -5,12 +5,16 @@ Created on 04-Jul-2018
 '''
 
 
-from generics import ExcelLibrary, Setup
+
 import os
 import subprocess
+
 from selenium.webdriver.chrome.webdriver import WebDriver
-from generics.Testdroid import Android, iOS
-from generics.Testdroid import webdriver
+
+from generics import excel_library, setup
+from generics.testdroid import Android, iOS
+from generics.testdroid import webdriver
+
 
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
@@ -18,18 +22,18 @@ PATH = lambda p: os.path.abspath(
 
 
 def execution():    
-    executionEnvi=ExcelLibrary.get_Cellvalue('../data/controller.xlsx', 'execution_controller', 0, 1)
-    executionPlatform=ExcelLibrary.get_Cellvalue('../data/controller.xlsx', 'execution_controller', 1, 1)
+    executionEnvi=excel_library.get_Cellvalue('../data/controller.xlsx', 'execution_controller', 0, 1)
+    executionPlatform=excel_library.get_Cellvalue('../data/controller.xlsx', 'execution_controller', 1, 1)
     
     testcases=None
-    value=ExcelLibrary.get_Cellvalue('../data/controller.xlsx', 'test_case_controller', 1, 1)
+    value=excel_library.get_Cellvalue('../data/controller.xlsx', 'test_case_controller', 1, 1)
     print value
     if value=='yes':
         testcases='complete'
     else:
         testcases=[]
-        check1=ExcelLibrary.get_columnValues('../data/controller.xlsx', 'test_case_controller', 0)
-        status=ExcelLibrary.get_columnValues('../data/controller.xlsx', 'test_case_controller', 1)
+        check1=excel_library.get_columnValues('../data/controller.xlsx', 'test_case_controller', 0)
+        status=excel_library.get_columnValues('../data/controller.xlsx', 'test_case_controller', 1)
         
         for i in range(len(check1)):
             if status[i]=='yes':
@@ -87,8 +91,8 @@ def execution():
                 file.write(filedata)
             os.rename('../run-tests.sh', '../android.sh')
             
-            device_group=ExcelLibrary.get_Cellvalue('../data/controller.xlsx', 'testdroid', 0, 1);
-            test_runName=ExcelLibrary.get_Cellvalue('../data/controller.xlsx', 'testdroid', 1, 1);
+            device_group=excel_library.get_Cellvalue('../data/controller.xlsx', 'testdroid', 0, 1);
+            test_runName=excel_library.get_Cellvalue('../data/controller.xlsx', 'testdroid', 1, 1);
             print device_group
             print test_runName
             Android(device_group, test_runName)
@@ -140,8 +144,8 @@ def execution():
                 file.write(filedata)
             os.rename('../run-tests.sh', '../ios.sh')
             
-            device_group=ExcelLibrary.get_Cellvalue('../data/controller.xlsx', 'testdroid', 1, 0);
-            test_runName=ExcelLibrary.get_Cellvalue('../data/controller.xlsx', 'testdroid', 1, 1);
+            device_group=excel_library.get_Cellvalue('../data/controller.xlsx', 'testdroid', 1, 0);
+            test_runName=excel_library.get_Cellvalue('../data/controller.xlsx', 'testdroid', 1, 1);
             print device_group
             print test_runName
             iOS(device_group, test_runName)
@@ -149,6 +153,6 @@ def execution():
     elif (executionEnvi=='Local Devices'):
         subprocess.call('adb devices')
         subprocess.call('adb forward tcp:13001 tcp:13000')
-        Setup.main()
+        setup.main()
         
 execution()
