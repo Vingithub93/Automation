@@ -1,0 +1,24 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1530875966029" stop="1530876038592">
+  <description>
+This module does end to end actions of MCQ variant
+</description>
+  <name>tests.test_case_02_MCQ</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1530875966029" status="passed" stop="1530876038592">
+      <name>Test_Case_02_mcq.test_01</name>
+      <attachments>
+        <attachment source="524a97c2-1609-4e5a-9862-c3572ead8f1a-attachment.txt" title="Captured stdout setup" type="text/plain"/>
+        <attachment source="3e018bd5-b499-443a-ae0f-c9ca4795d180-attachment.txt" title="Captured stdout call" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="7712-MainThread"/>
+        <label name="host" value="TYSS-MF-034"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython2"/>
+      </labels>
+      <steps/>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

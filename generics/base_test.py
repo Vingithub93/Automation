@@ -54,9 +54,6 @@ class BaseTest():
         """
         self.altdriver.stop()
         self.driver.quit()
-        if excel_library.get_Cellvalue(auto_const.CONTROLLER_PATH, 'execution_controller', 0, 1)=='Local Devices':
-            os.chdir(auto_const.REPORT_PATH)
-            os.startfile('Report.bat')
-      
+         
 if __name__ == '__main__':
     pytest.main()

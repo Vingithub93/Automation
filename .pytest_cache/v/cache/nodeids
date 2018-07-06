@@ -1,0 +1,4 @@
+[
+  "tests/test_case_01_classification.py::Test_Case_01_classification::()::test_01", 
+  "tests/test_case_02_MCQ.py::Test_Case_02_mcq::()::test_01"
+]

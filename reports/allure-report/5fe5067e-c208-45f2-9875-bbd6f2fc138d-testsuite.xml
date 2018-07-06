@@ -1,0 +1,24 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1530875876921" stop="1530875960834">
+  <description>
+This module does end to end actions of classification variant
+</description>
+  <name>tests.test_case_01_classification</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1530875876921" status="passed" stop="1530875960834">
+      <name>Test_Case_01_classification.test_01</name>
+      <attachments>
+        <attachment source="db3e00c0-09c1-4ee0-b2af-29964e4a5735-attachment.txt" title="Captured stdout setup" type="text/plain"/>
+        <attachment source="74ce88d5-04ea-45cd-a340-a07571817291-attachment.txt" title="Captured stdout call" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="7712-MainThread"/>
+        <label name="host" value="TYSS-MF-034"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython2"/>
+      </labels>
+      <steps/>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>
